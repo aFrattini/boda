@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="description" content="Adrián y Antonella se casan el 10 de octubre de 2026 en El Invernadero del Pazo de Santa Cruz, Bueu · Pontevedra"/>
+<meta name="theme-color" content="#1A1612"/>
+<title>Adrián &amp; Antonella · 10 · 10 · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════ */
+:root{
+  --parch:   #F6F0E4;
+  --parch2:  #EDE4D0;
+  --parch3:  #E2D5BC;
+  --ink:     #1A1612;
+  --ink2:    #3D3228;
+  --ink3:    #7A6A52;
+  --ink4:    #B0A088;
+  --sage:    #6B8C70;
+  --sage2:   #98B89C;
+  --sage3:   #C8DEC8;
+  --blush:   #C47A65;
+  --blush2:  #E5A898;
+  --blush3:  #F5D5CB;
+  --gold:    #B8942A;
+  --gold2:   #D4B050;
+  --gold3:   #F0D488;
+  --line:    rgba(26,22,18,0.10);
+  --line2:   rgba(26,22,18,0.20);
+  --line3:   rgba(26,22,18,0.35);
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--parch);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--blush);outline-offset:3px;border-radius:2px}
+
+/* ══════════════════════════════════════════
+   UTILITARIOS
+══════════════════════════════════════════ */
+.cap{
+  font-size:.62rem;letter-spacing:.45em;
+  text-transform:uppercase;font-weight:400;
+}
+.serif{font-family:'Cormorant Garamond',serif;}
+.sep{
+  display:flex;align-items:center;gap:1rem;
+  color:var(--ink4);
+}
+.sep::before,.sep::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,transparent,var(--parch3),transparent);
+}
+
+/* ══════════════════════════════════════════
+   BARRA DE PROGRESO
+══════════════════════════════════════════ */
+#bar{
+  position:fixed;top:0;left:0;right:0;
+  height:2px;z-index:200;pointer-events:none;
+}
+#barFill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--sage),var(--blush),var(--gold));
+  transition:width .08s linear;
+}
+
+/* ══════════════════════════════════════════
+   NAV FLOTANTE
+══════════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:.9rem 2rem;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:background .5s,backdrop-filter .5s,border-color .5s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(246,240,228,.88);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-bottom-color:var(--line);
+}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.2rem;font-weight:300;
+  color:var(--ink2);letter-spacing:.04em;
+}
+.nav-links{
+  display:flex;gap:2rem;list-style:none;
+}
+.nav-links a{
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;
+  position:relative;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-3px;left:0;
+  width:0;height:1px;background:var(--blush);
+  transition:width .35s ease;
+}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a:hover::after{width:100%;}
+
+.nav-burger{
+  display:none;flex-direction:column;gap:5px;
+  padding:4px;
+}
+.nav-burger span{
+  display:block;width:22px;height:1.5px;
+  background:var(--ink2);transition:all .35s ease;
+}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px)rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px)rotate(-45deg);}
+
+.mob-overlay{
+  position:fixed;inset:0;z-index:99;
+  background:var(--parch);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .45s ease,visibility .45s ease;
+}
+.mob-overlay.open{opacity:1;visibility:visible;}
+.mob-overlay ul{
+  list-style:none;text-align:center;
+  display:flex;flex-direction:column;gap:1.8rem;
+}
+.mob-overlay a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,7vw,2.8rem);
+  font-style:italic;color:var(--ink);
+  transition:color .3s;display:block;
+}
+.mob-overlay a:hover{color:var(--blush);}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:5rem 1.5rem 4rem;
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+}
+
+/* Canvas de botanica generativa */
+#heroCanvas{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  pointer-events:none;opacity:.35;
+}
+
+/* Overlay de textura */
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%,rgba(107,140,112,.12),transparent),
+    radial-gradient(ellipse 50% 60% at 80% 80%,rgba(196,122,101,.08),transparent);
+  pointer-events:none;
+}
+
+.hero-inner{position:relative;z-index:1;}
+
+.hero-pre{
+  font-size:.62rem;letter-spacing:.55em;text-transform:uppercase;
+  color:var(--sage2);
+  margin-bottom:2.5rem;
+  display:flex;align-items:center;gap:1.2rem;
+  justify-content:center;
+}
+.hero-pre::before,.hero-pre::after{
+  content:'';display:block;width:35px;height:1px;
+  background:var(--sage);opacity:.5;
+}
+
+.hero-names{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(4.5rem,16vw,11rem);
+  line-height:.88;
+  letter-spacing:-.03em;
+  color:var(--parch);
+  margin-bottom:1.2rem;
+}
+.hero-names em{
+  display:block;
+  font-style:italic;
+  color:var(--blush2);
+  font-size:.42em;
+  letter-spacing:.06em;
+  margin:.25em 0;
+}
+
+.hero-lema{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-weight:300;
+  font-size:clamp(1rem,2.8vw,1.5rem);
+  color:var(--ink4);
+  margin-bottom:3rem;
+  line-height:1.5;
+  max-width:500px;
+  margin-left:auto;margin-right:auto;
+}
+
+.hero-data{
+  display:flex;align-items:center;
+  justify-content:center;gap:1.5rem;
+  flex-wrap:wrap;
+}
+.hero-dato{
+  display:flex;flex-direction:column;
+  align-items:center;gap:.4rem;
+}
+.hero-dato .label{
+  font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--ink3);font-weight:400;
+}
+.hero-dato .value{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.15rem;
+  color:var(--gold3);font-weight:300;
+}
+.hero-vbar{
+  width:1px;height:32px;
+  background:rgba(246,240,228,.15);
+}
+
+.hero-scroll{
+  position:absolute;bottom:2.5rem;
+  display:flex;flex-direction:column;
+  align-items:center;gap:.9rem;
+}
+.hero-scroll-line{
+  width:1px;height:55px;
+  background:rgba(246,240,228,.15);
+  position:relative;overflow:hidden;
+}
+.hero-scroll-line::after{
+  content:'';position:absolute;
+  top:0;left:0;width:100%;height:35%;
+  background:var(--sage2);
+  animation:drip 2.4s ease-in-out infinite;
+}
+@keyframes drip{
+  0%{transform:translateY(-100%);opacity:0}
+  30%{opacity:1}
+  100%{transform:translateY(320%);opacity:0}
+}
+.hero-scroll-txt{
+  font-size:.58rem;letter-spacing:.45em;
+  text-transform:uppercase;color:var(--ink3);
+}
+
+/* Animaciones de entrada hero */
+.hero-pre,
+.hero-names,
+.hero-lema,
+.hero-data,
+.hero-scroll{
+  opacity:0;
+  transform:translateY(22px);
+  animation:rise .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-pre   {animation-delay:.3s}
+.hero-names {animation-delay:.55s}
+.hero-lema  {animation-delay:.8s}
+.hero-data  {animation-delay:1.05s}
+.hero-scroll{animation-delay:1.5s}
+@keyframes rise{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ══════════════════════════════════════════
+   SECCIONES GENERALES
+══════════════════════════════════════════ */
+.section{
+  padding:6rem 1.5rem;
+  position:relative;
+}
+.section--alt{background:var(--parch2);}
+.section--dark{background:var(--ink);}
+
+.s-inner{max-width:820px;margin:0 auto;}
+.s-inner--wide{max-width:1060px;margin:0 auto;}
+
+.s-tag{
+  font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--blush);font-weight:400;
+  display:flex;align-items:center;gap:.8rem;
+  margin-bottom:1.2rem;
+}
+.s-tag::before{
+  content:'';display:block;width:24px;height:1px;background:var(--blush);
+}
+
+.s-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(2.2rem,7vw,4.2rem);
+  line-height:1.05;letter-spacing:-.02em;
+  color:var(--ink);margin-bottom:1.5rem;
+}
+.s-title em{font-style:italic;color:var(--blush);}
+.s-title--light{color:var(--parch);}
+.s-title--light em{color:var(--blush2);}
+
+.s-lead{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-weight:300;
+  font-size:clamp(1.1rem,2.5vw,1.4rem);
+  color:var(--ink3);line-height:1.75;
+}
+.s-lead--light{color:var(--ink4);}
+.s-body{
+  font-size:1rem;color:var(--ink3);
+  line-height:1.85;font-weight:300;
+}
+.s-body em{color:var(--blush);font-style:italic;}
+
+/* ══════════════════════════════════════════
+   REVEAL
+══════════════════════════════════════════ */
+.rv{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),
+             transform .85s cubic-bezier(.16,1,.3,1);
+}
+.rv.in{opacity:1;transform:translateY(0)}
+.rvl{
+  opacity:0;transform:translateX(-24px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),
+             transform .85s cubic-bezier(.16,1,.3,1);
+}
+.rvl.in{opacity:1;transform:translateX(0)}
+.rvr{
+  opacity:0;transform:translateX(24px);
+  transition:opacity .85s cubic-bezier(.16,1,.3,1),
+             transform .85s cubic-bezier(.16,1,.3,1);
+}
+.rvr.in{opacity:1;transform:translateX(0)}
+
+/* ══════════════════════════════════════════
+   NUESTRA HISTORIA
+══════════════════════════════════════════ */
+.historia-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+}
+.historia-inicial{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5.5rem;line-height:1;
+  color:var(--blush);opacity:.18;
+  float:left;margin-right:.15em;margin-top:.08em;
+}
+.historia-firma{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.35rem;
+  color:var(--gold2);margin-top:1.5rem;
+  line-height:1.5;
+}
+/* Monograma SVG ornamental */
+.monogram-wrap{
+  display:flex;align-items:center;justify-content:center;
+}
+.monogram-svg{
+  width:min(300px,70vw);
+  animation:rotateSlow 45s linear infinite;
+}
+@keyframes rotateSlow{to{transform:rotate(360deg)}}
+
+/* ══════════════════════════════════════════
+   CUENTA ATRÁS
+══════════════════════════════════════════ */
+.countdown-inner{
+  text-align:center;
+  max-width:720px;margin:0 auto;
+}
+.countdown-grid{
+  display:flex;justify-content:center;
+  gap:clamp(.6rem,3vw,2.5rem);
+  margin-top:3rem;flex-wrap:wrap;
+}
+.cd-unit{
+  display:flex;flex-direction:column;
+  align-items:center;gap:.55rem;
+  position:relative;
+  min-width:70px;
+}
+.cd-unit+.cd-unit::before{
+  content:'·';
+  position:absolute;left:calc(-1*clamp(.3rem,1.5vw,1.25rem));
+  top:28%;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.8rem,5vw,3rem);
+  color:var(--blush3);line-height:1;
+}
+.cd-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,10vw,5.5rem);
+  font-weight:300;line-height:1;
+  color:var(--parch);letter-spacing:-.04em;
+  font-variant-numeric:tabular-nums;
+}
+.cd-l{
+  font-size:.55rem;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--ink3);
+}
+
+/* ══════════════════════════════════════════
+   DETALLES DEL DÍA
+══════════════════════════════════════════ */
+.detalles-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  margin-top:3rem;
+}
+.detalle-card{
+  padding:2.5rem 2rem;
+  background:var(--parch);
+  border:1px solid var(--line);
+  border-radius:2px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .4s ease,transform .4s ease;
+}
+.detalle-card::after{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--sage),var(--blush));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .5s ease;
+}
+.detalle-card:hover::after{transform:scaleX(1);}
+.detalle-card:hover{
+  border-color:var(--line2);
+  transform:translateY(-4px);
+}
+.detalle-label{
+  font-size:.58rem;letter-spacing:.45em;text-transform:uppercase;
+  color:var(--blush);margin-bottom:1.2rem;font-weight:400;
+}
+.detalle-icon{
+  width:36px;color:var(--sage);
+  margin-bottom:1.2rem;opacity:.7;
+}
+.detalle-name{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.6rem;
+  color:var(--ink);margin-bottom:.4rem;
+  letter-spacing:-.01em;
+}
+.detalle-info{
+  font-size:.88rem;color:var(--ink3);
+  line-height:1.6;font-weight:300;
+}
+.detalle-info strong{
+  display:block;font-weight:400;
+  color:var(--ink2);margin-bottom:.2rem;
+}
+
+/* ══════════════════════════════════════════
+   HORARIO
+══════════════════════════════════════════ */
+.horario-wrap{
+  max-width:600px;margin:3rem auto 0;
+  position:relative;
+}
+.horario-rail{
+  position:absolute;
+  left:68px;top:8px;bottom:8px;
+  width:1px;background:var(--line2);
+}
+.horario-fill{
+  position:absolute;
+  left:68px;top:8px;width:1px;
+  height:0%;
+  background:linear-gradient(to bottom,var(--sage),var(--blush));
+  transition:height .18s linear;
+}
+.hitem{
+  display:grid;
+  grid-template-columns:68px 18px 1fr;
+  gap:.8rem 1rem;
+  align-items:center;
+  padding-bottom:2rem;
+  opacity:.35;
+  transform:translateX(-10px);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.hitem.lit{opacity:1;transform:translateX(0);}
+.hitem:last-child{padding-bottom:0;}
+.h-time{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.1rem;
+  color:var(--blush);text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+.h-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--parch2);
+  border:1px solid var(--line3);
+  justify-self:center;
+  transition:all .5s ease;z-index:1;
+}
+.hitem.lit .h-dot{
+  background:var(--blush);
+  border-color:var(--blush);
+  box-shadow:0 0 0 5px var(--parch2);
+}
+.h-content h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;font-size:1.25rem;
+  color:var(--ink);margin-bottom:.2rem;
+}
+.h-content p{font-size:.85rem;color:var(--ink3);font-weight:300;}
+
+/* ══════════════════════════════════════════
+   LUGAR
+══════════════════════════════════════════ */
+.lugar-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3.5rem;align-items:center;
+}
+.lugar-info{}
+.lugar-nombre{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:clamp(1.8rem,5vw,2.8rem);
+  color:var(--parch);font-weight:300;
+  margin-bottom:.8rem;line-height:1.15;
+}
+.lugar-address{
+  font-size:.88rem;color:var(--ink3);
+  line-height:1.75;font-weight:300;
+  margin-bottom:2rem;
+}
+.lugar-address strong{
+  display:block;color:var(--parch2);
+  font-weight:400;margin-bottom:.3rem;
+}
+.lugar-btn{
+  display:inline-flex;align-items:center;
+  gap:.7rem;
+  padding:.85rem 1.8rem;
+  border:1px solid var(--parch3);
+  color:var(--parch2);
+  font-size:.65rem;letter-spacing:.3em;
+  text-transform:uppercase;font-weight:400;
+  cursor:pointer;
+  transition:all .4s ease;
+  position:relative;overflow:hidden;
+}
+.lugar-btn::before{
+  content:'';position:absolute;
+  inset:0;background:var(--parch);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .4s cubic-bezier(.16,1,.3,1);
+}
+.lugar-btn:hover::before{transform:scaleX(1);}
+.lugar-btn:hover{color:var(--ink);border-color:var(--parch);}
+.lugar-btn span,.lugar-btn svg{position:relative;z-index:1;}
+
+/* Mapa estilizado con SVG + iframe embed hint */
+.lugar-map{
+  border:1px solid rgba(246,240,228,.12);
+  border-radius:2px;
+  overflow:hidden;
+  aspect-ratio:1/1;
+  background:var(--ink2);
+  position:relative;
+}
+.lugar-map-art{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:1rem;
+}
+.lugar-map-badge{
+  text-align:center;
+}
+.lugar-map-badge p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.3rem;
+  color:var(--parch2);margin-bottom:.3rem;
+}
+.lugar-map-badge span{
+  font-size:.62rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink4);
+}
+.lugar-pin{
+  width:44px;height:44px;
+  background:var(--blush);border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 8px rgba(196,122,101,.15);
+  animation:pinPulse 2.5s ease-in-out infinite;
+}
+.lugar-pin svg{transform:rotate(45deg);width:18px;color:white;}
+@keyframes pinPulse{
+  0%,100%{box-shadow:0 0 0 8px rgba(196,122,101,.15)}
+  50%    {box-shadow:0 0 0 16px rgba(196,122,101,.05)}
+}
+
+
+/* ══════════════════════════════════════════
+   CUBIERTA
+══════════════════════════════════════════ */
+body.cub-locked{overflow:hidden}
+#cubierta{
+  position:fixed;inset:0;z-index:500;overflow:hidden;
+}
+.cub-mitad{
+  position:absolute;left:0;right:0;height:50%;
+  background:var(--ink);
+  display:flex;justify-content:center;overflow:hidden;
+  transition:transform 1.1s cubic-bezier(.76,0,.24,1);
+  will-change:transform;
+}
+#cub-top{
+  top:0;align-items:flex-end;padding-bottom:6rem;
+}
+#cub-bot{
+  bottom:0;align-items:flex-start;padding-top:4.5rem;
+}
+#cub-top::before{
+  content:'';position:absolute;
+  top:1.2rem;left:1.2rem;right:1.2rem;bottom:0;
+  border:1px solid rgba(246,240,228,.05);
+  border-bottom:none;pointer-events:none;
+}
+#cub-bot::before{
+  content:'';position:absolute;
+  bottom:1.2rem;left:1.2rem;right:1.2rem;top:0;
+  border:1px solid rgba(246,240,228,.05);
+  border-top:none;pointer-events:none;
+}
+#cubierta.open #cub-top{transform:translateY(-100%);}
+#cubierta.open #cub-bot{transform:translateY(100%);}
+.cub-content{
+  text-align:center;padding:0 2rem;
+  max-width:520px;width:100%;position:relative;z-index:1;
+}
+.cub-pre{
+  font-size:.58rem;letter-spacing:.6em;text-transform:uppercase;
+  color:var(--sage2);margin-bottom:2rem;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+  opacity:0;transform:translateY(14px);
+  animation:cubRise .85s cubic-bezier(.16,1,.3,1) .3s forwards;
+}
+.cub-pre::before,.cub-pre::after{
+  content:'';display:block;width:28px;height:1px;
+  background:var(--sage);opacity:.45;
+}
+.cub-names{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(3rem,12vw,6rem);
+  line-height:.88;color:var(--parch);
+  letter-spacing:-.03em;
+  opacity:0;transform:translateY(14px);
+  animation:cubRise .85s cubic-bezier(.16,1,.3,1) .5s forwards;
+}
+.cub-names em{
+  display:block;font-style:italic;
+  font-size:.32em;color:var(--blush2);
+  letter-spacing:.12em;margin:.4em 0;
+}
+.cub-date{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1.5rem,5vw,2.2rem);
+  color:var(--gold3);font-weight:300;
+  letter-spacing:.04em;margin-bottom:.5rem;
+  opacity:0;transform:translateY(14px);
+  animation:cubRise .85s cubic-bezier(.16,1,.3,1) .65s forwards;
+}
+.cub-lugar{
+  font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--ink4);line-height:1.9;margin-bottom:2.5rem;
+  opacity:0;transform:translateY(14px);
+  animation:cubRise .85s cubic-bezier(.16,1,.3,1) .75s forwards;
+}
+.cub-hint{
+  font-size:.56rem;letter-spacing:.45em;text-transform:uppercase;
+  color:var(--ink3);
+  opacity:0;transform:translateY(14px);
+  animation:cubRise .85s cubic-bezier(.16,1,.3,1) 1s forwards;
+}
+@keyframes cubRise{to{opacity:1;transform:translateY(0)}}
+#cub-sello{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(.82) translateY(8px);
+  opacity:0;z-index:10;cursor:pointer;
+  background:none;box-shadow:none;border-radius:0;
+  border:none;padding:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .65s cubic-bezier(.16,1,.3,1),
+             opacity .6s ease,
+             filter .4s ease;
+  filter:drop-shadow(0 0 0 rgba(107,140,112,0));
+}
+#cub-sello.visible{
+  transform:translate(-50%,-50%) scale(1) translateY(0);
+  opacity:1;
+}
+#cub-sello:hover{
+  transform:translate(-50%,-50%) scale(1.07) translateY(-4px);
+  filter:drop-shadow(0 6px 20px rgba(107,140,112,.35));
+}
+#cubierta.open #cub-sello{
+  transform:translate(-50%,-50%) scale(1.1) translateY(-10px);
+  opacity:0;
+  transition:transform .5s,opacity .3s;
+}
+
+/* ══════════════════════════════════════════
+   ALOJAMIENTO
+══════════════════════════════════════════ */
+.hotels-stack{
+  display:flex;flex-direction:column;gap:.8rem;
+  margin-top:3rem;
+}
+.hotel{
+  display:grid;
+  grid-template-columns:3.5rem 1px 1fr auto;
+  align-items:center;
+  gap:1.5rem;
+  padding:1.8rem 0;
+  border-bottom:1px solid rgba(246,240,228,.1);
+  cursor:pointer;
+  transition:all .4s ease;
+}
+.hotel:first-child{border-top:1px solid rgba(246,240,228,.1);}
+.hotel:hover{padding-left:.8rem;padding-right:.8rem;}
+.hotel-n{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:2.2rem;
+  color:var(--blush2);opacity:.35;
+  transition:opacity .4s;line-height:1;
+}
+.hotel:hover .hotel-n{opacity:.8;}
+.hotel-vbar{
+  width:1px;height:40px;
+  background:rgba(246,240,228,.15);
+}
+.hotel-info{}
+.hotel-stars{
+  font-size:.65rem;letter-spacing:.2em;
+  color:var(--gold2);margin-bottom:.35rem;
+}
+.hotel-name{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.35rem;
+  color:var(--parch);font-weight:300;margin-bottom:.2rem;
+}
+.hotel-meta{
+  font-size:.8rem;color:var(--ink3);font-weight:300;
+}
+.hotel-cta{
+  font-size:.62rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--gold2);
+  white-space:nowrap;
+  transition:letter-spacing .35s;
+}
+.hotel:hover .hotel-cta{letter-spacing:.4em;}
+
+/* ══════════════════════════════════════════
+   RSVP
+══════════════════════════════════════════ */
+.rsvp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:start;
+}
+.rsvp-deco{
+  display:flex;flex-direction:column;gap:2rem;
+}
+.rsvp-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(1.5rem,4vw,2.2rem);
+  color:var(--ink);line-height:1.35;
+  letter-spacing:-.01em;
+}
+.rsvp-quote em{color:var(--blush);}
+.rsvp-cite{
+  font-size:.65rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink4);
+  display:flex;align-items:center;gap:.8rem;
+}
+.rsvp-cite::before{
+  content:'';width:20px;height:1px;background:var(--blush);
+}
+.rsvp-deadline{
+  font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink3);
+  padding:.8rem 1.2rem;
+  border-left:2px solid var(--sage);
+}
+.rsvp-deadline strong{color:var(--sage);font-weight:400;}
+
+/* Tarjeta de formulario */
+.rsvp-card{
+  background:var(--parch);
+  border:1px solid var(--line2);
+  border-radius:2px;
+  padding:2.5rem;
+  position:relative;
+}
+.rsvp-card::before{
+  content:'';
+  position:absolute;top:-1px;left:50%;
+  transform:translateX(-50%);
+  width:60px;height:2px;
+  background:linear-gradient(90deg,var(--sage),var(--blush));
+}
+
+/* Botones Si/No */
+.choice-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:.8rem;margin-bottom:2rem;
+}
+.choice-btn{
+  padding:1.8rem 1rem;
+  border:1px solid var(--line2);
+  background:var(--parch2);
+  display:flex;flex-direction:column;
+  align-items:center;gap:.7rem;
+  cursor:pointer;
+  transition:all .4s cubic-bezier(.16,1,.3,1);
+  border-radius:2px;
+}
+.choice-btn:hover{transform:translateY(-3px);border-color:var(--ink2);}
+.choice-btn.si:hover{background:var(--sage3);border-color:var(--sage);}
+.choice-btn.no:hover{background:var(--blush3);border-color:var(--blush);}
+.choice-mark{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid currentColor;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;font-weight:300;
+  transition:all .3s;
+}
+.choice-btn.si .choice-mark{color:var(--sage);}
+.choice-btn.no .choice-mark{color:var(--blush);}
+.choice-btn.si:hover .choice-mark{background:var(--sage);color:white;border-color:var(--sage);}
+.choice-btn.no:hover .choice-mark{background:var(--blush);color:white;border-color:var(--blush);}
+.choice-lbl{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.05rem;
+  color:var(--ink);
+}
+.choice-sub{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink4);}
+
+/* Campos */
+.fld{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem;}
+.fld label{
+  font-size:.6rem;letter-spacing:.35em;
+  text-transform:uppercase;color:var(--ink4);
+}
+.fld input,.fld textarea{
+  background:transparent;border:none;
+  border-bottom:1px solid var(--line2);
+  padding:.6rem 0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;color:var(--ink);
+  outline:none;resize:none;
+  transition:border-color .3s;
+  border-radius:0;
+}
+.fld input::placeholder,.fld textarea::placeholder{
+  color:var(--parch3);font-style:italic;
+}
+.fld input:focus,.fld textarea:focus{border-bottom-color:var(--sage);}
+.fld input.err{border-bottom-color:var(--blush);}
+
+.cnt{
+  display:inline-flex;align-items:center;
+  gap:1.2rem;border:1px solid var(--line2);
+  padding:.35rem .9rem;background:var(--parch2);
+}
+.cnt-btn{
+  width:30px;height:30px;border-radius:50%;
+  border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;color:var(--ink3);
+  transition:all .3s;cursor:pointer;
+}
+.cnt-btn:hover{border-color:var(--sage);color:var(--sage);}
+.cnt-val{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.6rem;
+  color:var(--ink);min-width:1.8ch;text-align:center;
+}
+
+.send-btn{
+  width:100%;margin-top:1.5rem;
+  padding:1rem;
+  background:var(--ink);border:1px solid var(--ink);
+  color:var(--parch);
+  font-family:'Jost',sans-serif;
+  font-size:.68rem;letter-spacing:.35em;
+  text-transform:uppercase;font-weight:400;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  cursor:pointer;
+  transition:all .4s ease;
+}
+.send-btn:hover{
+  background:var(--sage);border-color:var(--sage);
+  color:white;letter-spacing:.42em;
+}
+.send-btn svg{transition:transform .4s;}
+.send-btn:hover svg{transform:translateX(4px);}
+
+/* RSVP link externo */
+.rsvp-link-btn{
+  display:flex;align-items:center;justify-content:center;
+  gap:.8rem;
+  width:100%;
+  padding:1.2rem 2rem;
+  background:var(--ink);border:1px solid var(--ink);
+  color:var(--parch);
+  font-family:'Jost',sans-serif;
+  font-size:.7rem;letter-spacing:.35em;
+  text-transform:uppercase;font-weight:400;
+  cursor:pointer;
+  transition:all .4s ease;
+  text-decoration:none;
+}
+.rsvp-link-btn:hover{
+  background:var(--sage);border-color:var(--sage);
+}
+.rsvp-link-btn svg{transition:transform .4s;}
+.rsvp-link-btn:hover svg{transform:translateX(4px);}
+
+/* Éxito RSVP */
+.rsvp-ok{text-align:center;padding:1.5rem 0;}
+.ok-seal{
+  width:72px;margin:0 auto 1.5rem;
+  color:var(--sage);
+  animation:sealIn .8s cubic-bezier(.16,1,.3,1);
+}
+@keyframes sealIn{from{transform:scale(.4)rotate(-25deg);opacity:0}to{transform:scale(1)rotate(0);opacity:1}}
+.ok-title{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.7rem;
+  color:var(--ink);margin-bottom:.5rem;
+}
+.ok-msg{font-size:.95rem;color:var(--ink3);line-height:1.6;}
+
+/* RSVP step animation */
+.step-in{animation:stepFade .55s cubic-bezier(.16,1,.3,1);}
+@keyframes stepFade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════ */
+.faq-list{margin-top:2rem;}
+details.fq{
+  border-bottom:1px solid var(--line);
+}
+details.fq:first-child{border-top:1px solid var(--line);}
+details.fq summary{
+  padding:1.3rem 0;
+  cursor:pointer;list-style:none;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;color:var(--ink);
+  transition:color .3s;
+}
+details.fq summary::-webkit-details-marker{display:none;}
+details.fq[open] summary{color:var(--sage);}
+.fq-plus{
+  width:26px;height:26px;border-radius:50%;
+  border:1px solid var(--line2);
+  flex-shrink:0;position:relative;
+  transition:all .35s ease;
+}
+.fq-plus::before,.fq-plus::after{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  background:var(--ink3);
+  transition:all .35s ease;
+  transform-origin:center;
+}
+.fq-plus::before{width:10px;height:1px;transform:translate(-50%,-50%);}
+.fq-plus::after{width:1px;height:10px;transform:translate(-50%,-50%);}
+details.fq[open] .fq-plus{background:var(--sage);border-color:var(--sage);}
+details.fq[open] .fq-plus::before{background:white;}
+details.fq[open] .fq-plus::after{opacity:0;transform:translate(-50%,-50%)rotate(90deg);}
+.fq-body{
+  padding:0 0 1.3rem 0;
+  font-size:.95rem;color:var(--ink3);
+  line-height:1.8;font-weight:300;
+  animation:fqIn .35s ease;
+}
+@keyframes fqIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.footer{
+  background:var(--ink);
+  padding:5.5rem 2rem 3rem;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+#footCanvas{
+  position:absolute;inset:0;
+  pointer-events:none;opacity:.15;
+}
+.footer-inner{position:relative;z-index:1;}
+.footer-names{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;font-style:italic;
+  font-size:clamp(2.8rem,10vw,5.5rem);
+  color:var(--parch);letter-spacing:-.03em;
+  line-height:.9;margin-bottom:.5rem;
+}
+.footer-names span{color:var(--blush2);}
+.footer-date{
+  font-size:.62rem;letter-spacing:.6em;
+  text-transform:uppercase;color:var(--gold2);
+  margin-bottom:1.5rem;
+}
+.footer-lema{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:1.1rem;
+  color:var(--ink4);max-width:380px;
+  margin:0 auto 3rem;line-height:1.65;
+}
+.wa{
+  display:inline-flex;align-items:center;
+  gap:.7rem;
+  padding:.85rem 1.8rem;
+  background:#25D366;color:#fff;
+  font-family:'Jost',sans-serif;
+  font-size:.62rem;letter-spacing:.3em;
+  text-transform:uppercase;
+  transition:all .4s ease;
+  margin-bottom:3rem;
+  border:1px solid #25D366;
+}
+.wa:hover{background:transparent;color:#25D366;}
+.footer-tiny{
+  font-size:.55rem;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--ink3);opacity:.5;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .historia-grid,
+  .lugar-grid,
+  .rsvp-grid{grid-template-columns:1fr}
+  .detalles-grid{grid-template-columns:1fr}
+  .monogram-wrap{order:-1}
+  .lugar-map{aspect-ratio:16/9}
+  .section{padding:4.5rem 1.5rem}
+}
+@media(max-width:600px){
+  .hero-names{font-size:clamp(3.8rem,18vw,7rem)}
+  .choice-row{grid-template-columns:1fr}
+  .countdown-grid{gap:.5rem}
+  .cd-unit+.cd-unit::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rv,.rvl,.rvr{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="bar"><div id="barFill"></div></div>
+
+<!-- ╔══════════════════════════════╗
+     ║  NAV                        ║
+     ╚══════════════════════════════╝ -->
+<nav class="nav" id="nav">
+  <span class="nav-brand">Adrián &amp; Antonella</span>
+  <ul class="nav-links">
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#detalle">El día</a></li>
+    <li><a href="#lugar">Lugar</a></li>
+    <li><a href="#rsvp">Confirmar</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-overlay" id="mobOverlay">
+  <ul>
+    <li><a href="#historia">Nuestra historia</a></li>
+    <li><a href="#detalle">El gran día</a></li>
+    <li><a href="#horario">Horario</a></li>
+    <li><a href="#lugar">El lugar</a></li>
+    <li><a href="#alojamiento">Alojamiento</a></li>
+    <li><a href="#regalos">Regalos</a></li>
+    <li><a href="#rsvp">Confirmar</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</div>
+
+<!-- ╔══════════════════════════════╗
+     ║  CUBIERTA                   ║
+     ╚══════════════════════════════╝ -->
+<div id="cubierta">
+  <div class="cub-mitad" id="cub-top">
+    <div class="cub-content">
+      <p class="cub-pre">Os invitamos a nuestra boda</p>
+      <h1 class="cub-names">
+        Adrián
+        <em>&amp;</em>
+        Antonella
+      </h1>
+    </div>
+  </div>
+  <div class="cub-mitad" id="cub-bot">
+    <div class="cub-content">
+      <p class="cub-date">10 · 10 · 2026</p>
+      <p class="cub-lugar">
+        El Invernadero del Pazo de Santa Cruz<br/>
+        Bueu · Pontevedra · Galicia
+      </p>
+      <p class="cub-hint">Toca para descubrir nuestra historia</p>
+    </div>
+  </div>
+  <button id="cub-sello" aria-label="Abrir invitación">
+    <svg style="width:clamp(100px,22vmin,150px);height:auto" viewBox="0 0 1125 1124.99995" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#6b8c70" d="M 356.242188 92.613281 C 356.480469 92.675781 356.707031 92.789062 356.917969 92.953125 C 357.128906 93.117188 357.328125 93.328125 357.507812 93.589844 C 357.691406 93.851562 357.855469 94.164062 358.007812 94.519531 C 358.15625 94.878906 358.289062 95.28125 358.40625 95.734375 C 358.523438 96.183594 358.625 96.675781 358.707031 97.214844 C 358.789062 97.753906 358.855469 98.332031 358.902344 98.953125 C 358.949219 99.574219 358.980469 100.234375 358.992188 100.929688 C 359.003906 101.628906 359 102.363281 358.976562 103.128906 C 358.953125 103.898438 358.914062 104.695312 358.855469 105.527344 C 358.796875 106.359375 358.71875 107.214844 358.625 108.101562 C 358.535156 108.988281 358.421875 109.894531 358.296875 110.828125 C 358.167969 111.757812 358.027344 112.707031 357.867188 113.675781 C 357.707031 114.644531 357.53125 115.628906 357.339844 116.625 C 357.148438 117.621094 356.945312 118.628906 356.722656 119.644531 C 356.503906 120.660156 356.269531 121.679688 356.023438 122.703125 C 355.777344 123.726562 355.515625 124.75 355.246094 125.769531 C 354.972656 126.792969 354.6875 127.808594 354.394531 128.820312 C 354.101562 129.832031 353.796875 130.832031 353.484375 131.824219 C 353.171875 132.8125 352.847656 133.789062 352.519531 134.746094 C 352.1875 135.707031 351.851562 136.648438 351.511719 137.566406 C 351.167969 138.488281 350.820312 139.382812 350.46875 140.253906 C 350.113281 141.128906 349.757812 141.96875 349.398438 142.785156 C 349.039062 143.597656 348.679688 144.382812 348.316406 145.132812 C 347.957031 145.882812 347.59375 146.59375 347.230469 147.273438 C 346.871094 147.949219 346.511719 148.589844 346.152344 149.1875 C 345.796875 149.789062 345.441406 150.34375 345.09375 150.859375 C 344.742188 151.375 344.398438 151.847656 344.058594 152.273438 C 343.71875 152.699219 343.386719 153.078125 343.0625 153.410156 C 342.738281 153.742188 342.421875 154.027344 342.113281 154.261719 C 341.804688 154.496094 341.507812 154.683594 341.21875 154.820312 C 340.929688 154.957031 340.65625 155.042969 340.390625 155.082031 C 340.125 155.117188 339.875 155.105469 339.632812 155.042969 C 339.394531 154.976562 339.167969 154.863281 338.957031 154.699219 C 338.746094 154.535156 338.550781 154.324219 338.367188 154.0625 C 338.1875 153.800781 338.019531 153.492188 337.871094 153.132812 C 337.722656 152.777344 337.585938 152.371094 337.46875 151.921875 C 337.355469 151.472656 337.253906 150.976562 337.171875 150.4375 C 337.089844 149.902344 337.023438 149.320312 336.976562 148.699219 C 336.925781 148.082031 336.898438 147.421875 336.882812 146.722656 C 336.871094 146.023438 336.878906 145.292969 336.902344 144.523438 C 336.925781 143.757812 336.964844 142.957031 337.023438 142.125 C 337.082031 141.296875 337.15625 140.4375 337.25 139.554688 C 337.34375 138.667969 337.453125 137.757812 337.582031 136.828125 C 337.707031 135.894531 337.851562 134.945312 338.011719 133.976562 C 338.171875 133.007812 338.347656 132.023438 338.539062 131.027344 C 338.726562 130.03125 338.933594 129.027344 339.152344 128.011719 C 339.375 126.996094 339.605469 125.976562 339.855469 124.953125 C 340.101562 123.929688 340.359375 122.90625 340.632812 121.882812 C 340.90625 120.859375 341.1875 119.84375 341.480469 118.832031 C 341.777344 117.820312 342.082031 116.820312 342.394531 115.832031 C 342.707031 114.839844 343.027344 113.867188 343.359375 112.90625 C 343.6875 111.945312 344.023438 111.007812 344.367188 110.085938 C 344.710938 109.167969 345.058594 108.269531 345.410156 107.398438 C 345.761719 106.527344 346.117188 105.683594 346.476562 104.871094 C 346.835938 104.054688 347.199219 103.273438 347.558594 102.523438 C 347.921875 101.773438 348.285156 101.058594 348.644531 100.378906 C 349.007812 99.703125 349.367188 99.0625 349.722656 98.464844 C 350.082031 97.867188 350.433594 97.308594 350.785156 96.792969 C 351.132812 96.277344 351.480469 95.808594 351.820312 95.382812 C 352.15625 94.957031 352.488281 94.578125 352.816406 94.246094 C 353.140625 93.914062 353.457031 93.628906 353.765625 93.390625 C 354.074219 93.15625 354.371094 92.96875 354.65625 92.832031 C 354.945312 92.695312 355.222656 92.609375 355.488281 92.574219 C 355.75 92.535156 356.003906 92.550781 356.242188 92.613281 Z M 356.242188 92.613281 " fill-opacity="1" fill-rule="nonzero"/>
+      <path fill="#6b8c70" d="M 530.714844 159.386719 C 533.117188 166.257812 536.554688 166.601562 540.335938 160.417969 C 547.207031 149.421875 556.140625 140.488281 566.792969 133.613281 C 582.597656 123.648438 603.558594 120.902344 610.777344 142.546875 C 611.121094 143.578125 611.121094 144.609375 610.777344 145.640625 C 598.75 191 569.199219 213.332031 540.335938 243.914062 C 534.148438 250.445312 527.621094 251.132812 520.40625 245.632812 C 496.695312 228.453125 443.777344 162.820312 475.734375 133.613281 C 485.011719 125.367188 496.695312 126.054688 511.125 135.675781 C 520.746094 142.546875 527.277344 150.109375 530.714844 159.386719 Z M 527.964844 234.636719 C 530.371094 236.699219 533.460938 236.355469 535.523438 233.949219 C 560.609375 205.429688 584.660156 183.09375 598.40625 146.671875 C 599.4375 143.921875 598.0625 140.832031 595.3125 139.800781 C 594.96875 139.800781 594.625 139.457031 593.9375 139.457031 C 570.230469 136.363281 549.613281 167.632812 539.304688 185.5 C 530.027344 201.652344 513.53125 156.980469 509.066406 150.796875 C 499.789062 137.738281 491.882812 134.644531 485.699219 141.863281 C 463.363281 167.289062 509.410156 219.175781 527.964844 234.636719 Z M 527.964844 234.636719 " fill-opacity="1" fill-rule="nonzero"/>
+      <path fill="#6b8c70" d="M 82.109375 210.472656 C 83.1875 210.921875 84.261719 211.382812 85.324219 211.855469 C 86.390625 212.328125 87.441406 212.808594 88.484375 213.296875 C 89.523438 213.78125 90.546875 214.277344 91.550781 214.773438 C 92.558594 215.273438 93.539062 215.773438 94.5 216.28125 C 95.460938 216.785156 96.398438 217.289062 97.304688 217.796875 C 98.210938 218.300781 99.085938 218.804688 99.933594 219.308594 C 100.777344 219.8125 101.585938 220.308594 102.359375 220.804688 C 103.132812 221.296875 103.867188 221.785156 104.566406 222.265625 C 105.261719 222.746094 105.914062 223.21875 106.527344 223.679688 C 107.136719 224.144531 107.703125 224.597656 108.222656 225.039062 C 108.742188 225.476562 109.214844 225.90625 109.640625 226.320312 C 110.066406 226.734375 110.441406 227.132812 110.765625 227.519531 C 111.089844 227.902344 111.363281 228.269531 111.585938 228.617188 C 111.808594 228.96875 111.976562 229.296875 112.09375 229.609375 C 112.210938 229.921875 112.273438 230.214844 112.285156 230.484375 C 112.296875 230.757812 112.253906 231.007812 112.160156 231.234375 C 112.0625 231.464844 111.914062 231.671875 111.714844 231.851562 C 111.511719 232.035156 111.261719 232.195312 110.957031 232.332031 C 110.652344 232.46875 110.296875 232.578125 109.890625 232.667969 C 109.488281 232.753906 109.035156 232.816406 108.53125 232.855469 C 108.03125 232.894531 107.484375 232.90625 106.890625 232.894531 C 106.296875 232.882812 105.660156 232.847656 104.980469 232.785156 C 104.300781 232.726562 103.582031 232.640625 102.824219 232.53125 C 102.066406 232.421875 101.269531 232.285156 100.4375 232.128906 C 99.609375 231.96875 98.746094 231.789062 97.851562 231.585938 C 96.953125 231.378906 96.03125 231.152344 95.082031 230.90625 C 94.128906 230.65625 93.15625 230.386719 92.160156 230.097656 C 91.160156 229.804688 90.144531 229.496094 89.109375 229.164062 C 88.078125 228.835938 87.03125 228.488281 85.96875 228.121094 C 84.90625 227.757812 83.839844 227.375 82.761719 226.976562 C 81.683594 226.578125 80.601562 226.164062 79.519531 225.738281 C 78.433594 225.308594 77.351562 224.871094 76.273438 224.417969 C 75.191406 223.96875 74.121094 223.503906 73.054688 223.035156 C 71.992188 222.5625 70.9375 222.082031 69.898438 221.59375 C 68.855469 221.105469 67.832031 220.613281 66.828125 220.113281 C 65.824219 219.617188 64.839844 219.113281 63.878906 218.609375 C 62.917969 218.105469 61.984375 217.601562 61.078125 217.09375 C 60.167969 216.589844 59.292969 216.082031 58.449219 215.582031 C 57.605469 215.078125 56.792969 214.582031 56.019531 214.085938 C 55.246094 213.59375 54.511719 213.105469 53.816406 212.625 C 53.121094 212.144531 52.464844 211.671875 51.855469 211.207031 C 51.242188 210.746094 50.679688 210.292969 50.15625 209.851562 C 49.636719 209.410156 49.164062 208.984375 48.738281 208.570312 C 48.316406 208.15625 47.941406 207.757812 47.617188 207.371094 C 47.289062 206.988281 47.015625 206.621094 46.796875 206.273438 C 46.574219 205.921875 46.402344 205.589844 46.285156 205.277344 C 46.167969 204.964844 46.105469 204.675781 46.09375 204.402344 C 46.085938 204.132812 46.128906 203.882812 46.222656 203.652344 C 46.316406 203.425781 46.464844 203.21875 46.667969 203.035156 C 46.867188 202.851562 47.121094 202.695312 47.425781 202.558594 C 47.730469 202.421875 48.085938 202.308594 48.488281 202.222656 C 48.894531 202.136719 49.347656 202.074219 49.847656 202.035156 C 50.351562 201.996094 50.898438 201.984375 51.492188 201.996094 C 52.082031 202.007812 52.71875 202.042969 53.398438 202.101562 C 54.078125 202.164062 54.796875 202.25 55.558594 202.359375 C 56.316406 202.46875 57.109375 202.605469 57.941406 202.761719 C 58.773438 202.917969 59.636719 203.101562 60.53125 203.304688 C 61.425781 203.507812 62.347656 203.734375 63.300781 203.984375 C 64.25 204.234375 65.226562 204.503906 66.222656 204.792969 C 67.21875 205.082031 68.234375 205.394531 69.269531 205.722656 C 70.304688 206.054688 71.351562 206.402344 72.410156 206.769531 C 73.472656 207.132812 74.542969 207.515625 75.621094 207.914062 C 76.699219 208.3125 77.777344 208.726562 78.863281 209.152344 C 79.945312 209.578125 81.027344 210.019531 82.109375 210.472656 Z M 82.109375 210.472656 " fill-opacity="1" fill-rule="nonzero"/>
+      <path fill="#6b8c70" d="M 391.546875 363.839844 C 390.515625 366.585938 391.890625 369.679688 394.640625 371.054688 C 394.984375 371.398438 395.671875 371.398438 396.359375 371.398438 C 431.0625 374.492188 464.394531 383.425781 496.351562 397.855469 C 498.070312 398.542969 499.789062 398.542969 501.503906 397.511719 C 517.65625 387.203125 533.804688 374.492188 549.957031 366.929688 C 698.742188 295.113281 870.550781 368.992188 943.398438 512.625 C 1002.5 629.800781 986.007812 785.800781 883.609375 875.140625 C 781.210938 964.484375 646.855469 960.703125 536.210938 888.542969 C 534.148438 887.167969 531.742188 887.511719 529.683594 888.886719 C 463.019531 942.148438 387.425781 965.515625 303.238281 958.640625 C 130.398438 944.898438 23.1875 779.617188 65.453125 614.335938 C 84.351562 539.425781 126.617188 477.917969 192.25 429.8125 C 194.65625 428.09375 195.339844 424.660156 193.28125 422.253906 C 192.59375 421.566406 191.90625 420.878906 191.21875 420.535156 C 177.128906 414.351562 163.730469 405.074219 151.359375 393.390625 C 143.457031 385.832031 140.363281 376.207031 142.425781 364.871094 C 147.921875 333.945312 155.480469 303.707031 165.789062 274.15625 C 166.476562 272.78125 167.507812 271.40625 168.882812 271.0625 C 222.832031 249.414062 278.152344 231.546875 334.851562 218.144531 C 336.570312 217.800781 338.285156 218.144531 339.660156 219.519531 L 412.164062 284.804688 C 413.539062 286.179688 414.226562 287.898438 413.882812 289.617188 C 408.042969 314.703125 401.167969 339.785156 391.546875 363.839844 Z M 307.703125 245.632812 L 354.09375 294.085938 C 355.46875 295.457031 357.1875 295.800781 358.902344 295.800781 L 383.644531 291.335938 C 391.546875 289.960938 392.234375 286.867188 386.050781 281.714844 C 373.335938 271.40625 360.964844 260.410156 348.9375 248.726562 C 340.691406 240.824219 334.507812 236.011719 330.726562 234.636719 C 323.167969 231.890625 315.609375 232.578125 308.390625 237.386719 C 305.988281 239.105469 305.300781 242.542969 306.671875 244.945312 C 307.359375 244.945312 307.703125 245.289062 307.703125 245.632812 Z M 313.890625 271.75 C 311.140625 269.34375 303.582031 260.753906 291.210938 246.320312 C 289.835938 244.601562 287.773438 243.914062 285.714844 244.601562 L 265.441406 250.789062 C 262.691406 251.820312 260.972656 254.566406 261.660156 257.660156 C 261.660156 258.003906 261.660156 258.003906 262.003906 258.347656 C 269.21875 275.527344 274.71875 293.398438 278.152344 311.953125 C 278.839844 315.042969 281.589844 316.761719 284.683594 316.417969 C 284.683594 316.417969 285.027344 316.417969 285.027344 316.417969 L 332.445312 302.675781 C 335.195312 301.988281 336.914062 298.894531 336.226562 295.800781 C 335.882812 295.113281 335.539062 294.429688 335.195312 293.742188 C 329.695312 287.210938 322.824219 279.996094 313.890625 271.75 Z M 251.695312 257.660156 C 251.351562 256.285156 249.976562 255.253906 248.257812 255.597656 C 248.257812 255.597656 248.257812 255.597656 247.914062 255.597656 L 215.957031 266.25 C 214.929688 266.59375 214.242188 267.28125 214.242188 268.3125 L 199.808594 343.910156 C 199.464844 345.285156 200.496094 347 202.214844 347 C 202.558594 347 203.246094 347 203.589844 347 L 265.097656 321.917969 C 266.46875 321.230469 267.15625 319.855469 266.8125 318.824219 Z M 177.128906 278.277344 C 176.097656 278.621094 175.410156 279.308594 175.410156 280.339844 L 156.167969 363.152344 C 155.824219 364.527344 156.855469 365.902344 158.230469 366.242188 C 158.917969 366.242188 159.261719 366.242188 159.949219 366.242188 L 184.347656 355.25 C 185.03125 354.90625 185.71875 354.21875 185.71875 353.53125 L 202.902344 275.183594 C 203.246094 273.8125 202.214844 272.4375 200.839844 272.09375 C 200.496094 272.09375 199.808594 272.09375 199.464844 272.09375 Z M 360.964844 309.203125 C 359.933594 309.546875 358.902344 310.234375 358.558594 311.609375 L 349.28125 367.617188 C 348.9375 368.992188 349.96875 370.710938 351.6875 371.054688 C 352.03125 371.054688 352.375 371.054688 352.71875 371.054688 L 371.273438 367.273438 C 372.304688 366.929688 372.992188 366.242188 373.335938 365.558594 L 393.953125 308.515625 C 394.640625 307.140625 393.609375 305.421875 392.234375 304.734375 C 391.890625 304.734375 391.203125 304.394531 390.859375 304.734375 Z M 340.347656 350.09375 C 341.722656 339.785156 343.097656 329.820312 344.128906 320.199219 C 344.472656 317.105469 342.410156 314.359375 339.316406 314.359375 C 338.628906 314.359375 337.941406 314.359375 337.257812 314.703125 L 288.117188 329.132812 C 285.371094 329.820312 283.652344 332.914062 284.339844 336.003906 L 297.050781 375.523438 C 298.082031 378.269531 300.488281 379.644531 303.238281 379.300781 L 334.507812 372.773438 C 336.914062 372.429688 338.628906 370.023438 338.628906 367.617188 C 339.316406 361.089844 339.660156 355.59375 340.347656 350.09375 Z M 207.710938 359.027344 C 206.679688 359.371094 206.335938 360.746094 206.679688 361.777344 C 206.679688 362.121094 207.023438 362.464844 207.367188 362.464844 L 244.824219 396.824219 C 245.511719 397.167969 246.195312 397.511719 246.882812 397.167969 L 286.402344 383.425781 C 287.429688 383.082031 288.117188 382.050781 287.773438 381.019531 L 274.03125 336.003906 C 273.6875 334.976562 272.65625 334.289062 271.625 334.632812 Z M 519.375 409.882812 L 538.273438 422.253906 C 539.992188 423.285156 542.394531 423.285156 544.113281 422.253906 C 716.265625 314.703125 919.6875 445.621094 937.558594 632.890625 C 961.265625 886.136719 669.535156 997.46875 507.003906 808.824219 C 422.816406 711.238281 418.351562 572.070312 494.976562 468.984375 C 496.695312 466.582031 496.351562 463.144531 493.945312 461.425781 C 493.601562 461.425781 493.601562 461.082031 493.257812 461.082031 L 475.046875 450.429688 C 472.640625 449.054688 469.546875 449.742188 467.832031 452.148438 C 378.144531 583.753906 402.542969 749.378906 517.65625 855.898438 C 637.921875 967.230469 821.414062 950.050781 915.910156 816.039062 C 1027.929688 657.289062 935.496094 412.976562 748.910156 361.777344 C 664.722656 338.753906 588.441406 351.8125 519.71875 400.949219 C 517.3125 402.667969 516.625 406.105469 518.34375 408.507812 C 518.34375 408.851562 518.6875 409.539062 519.375 409.882812 Z M 166.476562 385.832031 L 208.398438 414.007812 C 210.117188 415.039062 212.179688 415.382812 213.898438 414.351562 L 226.953125 407.476562 C 232.796875 404.386719 232.796875 401.292969 227.296875 397.855469 C 215.273438 390.640625 205.304688 381.363281 197.058594 370.023438 C 195.683594 367.960938 193.28125 367.273438 190.875 367.960938 L 167.851562 375.867188 C 160.980469 378.613281 160.292969 382.050781 166.476562 385.832031 Z M 158.230469 884.078125 C 261.316406 971.699219 410.445312 963.109375 516.28125 880.640625 C 518.6875 878.921875 519.03125 875.484375 517.3125 873.082031 C 516.96875 872.738281 516.625 872.394531 516.28125 872.050781 L 505.285156 863.460938 C 503.222656 861.742188 500.472656 861.742188 498.414062 863.460938 C 414.226562 928.402344 301.175781 943.867188 208.054688 890.261719 C 97.753906 826.347656 63.390625 686.152344 119.058594 573.101562 C 178.847656 452.492188 324.886719 379.988281 456.492188 430.84375 C 601.839844 487.199219 643.761719 659.351562 566.105469 786.488281 C 558.546875 798.859375 550.300781 810.886719 541.707031 822.914062 C 539.992188 825.316406 540.335938 828.410156 542.394531 830.128906 L 552.703125 839.0625 C 555.109375 841.125 558.546875 840.78125 560.265625 838.375 C 646.167969 737.007812 664.035156 587.191406 577.789062 479.980469 C 526.589844 416.414062 454.773438 383.082031 372.648438 384.800781 C 348.59375 385.144531 325.917969 383.769531 302.894531 389.953125 C 151.359375 431.875 40.371094 584.097656 74.730469 744.566406 C 86.414062 800.234375 114.246094 846.621094 158.230469 884.078125 Z M 643.761719 591.65625 C 660.945312 681.339844 631.738281 775.835938 572.976562 845.589844 C 570.917969 847.996094 571.261719 851.433594 573.664062 853.152344 C 574.007812 853.152344 574.007812 853.496094 574.351562 853.496094 C 698.398438 932.527344 862.304688 885.792969 913.503906 744.910156 C 965.390625 601.621094 878.109375 432.5625 724.171875 398.199219 C 666.441406 385.488281 611.121094 395.109375 557.859375 427.75 C 555.453125 429.46875 554.421875 432.5625 556.140625 435.3125 C 556.484375 435.65625 556.828125 436 557.171875 436.34375 C 603.214844 479.980469 632.082031 531.523438 643.761719 591.65625 Z M 105.65625 664.847656 C 91.914062 808.824219 211.148438 923.9375 354.09375 909.503906 C 403.574219 904.695312 448.589844 886.480469 488.449219 854.867188 C 490.851562 853.152344 491.195312 849.714844 489.480469 847.308594 C 489.480469 847.308594 489.136719 846.964844 489.136719 846.964844 C 437.59375 791.300781 408.386719 727.042969 400.824219 654.195312 C 397.046875 616.398438 399.449219 580.660156 408.386719 546.300781 C 417.664062 511.25 432.78125 478.261719 454.085938 447.679688 C 455.804688 445.277344 455.117188 441.839844 452.710938 440.121094 C 452.367188 439.777344 452.023438 439.777344 451.679688 439.433594 C 433.46875 431.875 414.570312 427.40625 394.984375 425.347656 C 367.839844 422.597656 326.605469 423.628906 297.738281 432.90625 C 193.28125 466.925781 116.308594 554.890625 105.65625 664.847656 Z M 511.8125 474.484375 C 509.753906 472.421875 505.972656 472.765625 504.253906 474.828125 C 504.253906 474.828125 504.253906 474.828125 503.910156 475.171875 C 471.265625 516.75 452.367188 571.039062 452.367188 624.644531 C 452.023438 695.773438 476.421875 758.3125 525.558594 812.605469 C 527.621094 814.664062 531.054688 815.007812 533.117188 812.949219 C 533.460938 812.605469 533.460938 812.605469 533.804688 812.261719 C 575.726562 761.0625 595.65625 704.707031 593.59375 642.855469 C 591.535156 578.257812 564.386719 521.902344 511.8125 474.484375 Z M 511.8125 474.484375 " fill-opacity="1" fill-rule="nonzero"/>
+      </svg>
+  </button>
+</div>
+
+<main>
+
+<!-- ╔══════════════════════════════╗
+     ║  HERO                       ║
+     ╚══════════════════════════════╝ -->
+<section class="hero" id="inicio">
+  <canvas id="heroCanvas"></canvas>
+
+  <div class="hero-inner">
+    <p class="hero-pre">Os invitamos a nuestra boda</p>
+
+    <h1 class="hero-names">
+      Adrián
+      <em>&amp;</em>
+      Antonella
+    </h1>
+
+    <p class="hero-lema">
+      Nuestras almas se reconocieron.<br/>Hoy celebramos su unión.
+    </p>
+
+    <div class="hero-data">
+      <div class="hero-dato">
+        <span class="label">Fecha</span>
+        <span class="value">10 · 10 · 2026</span>
+      </div>
+      <div class="hero-vbar"></div>
+      <div class="hero-dato">
+        <span class="label">Hora</span>
+        <span class="value">14:00 h</span>
+      </div>
+      <div class="hero-vbar"></div>
+      <div class="hero-dato">
+        <span class="label">Lugar</span>
+        <span class="value">Bueu, Galicia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-txt">Descubre</span>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  HISTORIA                   ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="historia">
+  <div class="s-inner">
+    <div class="historia-grid">
+      <div>
+        <p class="s-tag rv">Nuestra historia</p>
+        <h2 class="s-title rv">Un amor que<br/>nos <em>encontró</em></h2>
+        <div class="rv">
+          <p class="s-body" style="margin-bottom:1.2rem">
+            <span class="historia-inicial">H</span>ay historias que no se planean.
+            La nuestra empezó con una mirada,
+            siguió con palabras que no querían terminar
+            y terminó convirtiéndose en <em>la historia más bonita
+            que hemos vivido</em>.
+          </p>
+          <p class="s-body" style="margin-bottom:1.2rem">
+            Hoy queremos celebrarlo con las personas que nos importan —
+            las que han estado, las que han acompañado, las que
+            saben que este momento lleva mucho tiempo fraguándose.
+          </p>
+          <p class="s-body">
+            Que este sábado sea nuestro momento favorito
+            de todos los que vendrán juntos.
+          </p>
+          <p class="historia-firma">Con todo nuestro amor,<br/>Adrián &amp; Antonella</p>
+        </div>
+      </div>
+
+      <div class="monogram-wrap rvr">
+        <!-- Monograma / orla SVG animado -->
+        <svg class="monogram-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Anillos -->
+          <circle cx="150" cy="150" r="138" stroke="#C47A65" stroke-width=".8" opacity=".25"/>
+          <circle cx="150" cy="150" r="124" stroke="#6B8C70" stroke-width=".5" stroke-dasharray="2 4" opacity=".3"/>
+          <circle cx="150" cy="150" r="110" stroke="#B8942A" stroke-width=".4" opacity=".2"/>
+          <!-- Decoración vegetal (4 ramas) -->
+          <path d="M150 12 Q130 50 150 80 Q170 50 150 12" fill="#6B8C70" opacity=".12"/>
+          <path d="M150 288 Q130 250 150 220 Q170 250 150 288" fill="#6B8C70" opacity=".12"/>
+          <path d="M12 150 Q50 130 80 150 Q50 170 12 150" fill="#6B8C70" opacity=".12"/>
+          <path d="M288 150 Q250 130 220 150 Q250 170 288 150" fill="#6B8C70" opacity=".12"/>
+          <!-- Puntos cardinales -->
+          <circle cx="150" cy="13" r="3" fill="#C47A65" opacity=".6"/>
+          <circle cx="150" cy="287" r="3" fill="#C47A65" opacity=".6"/>
+          <circle cx="13" cy="150" r="3" fill="#B8942A" opacity=".5"/>
+          <circle cx="287" cy="150" r="3" fill="#B8942A" opacity=".5"/>
+          <!-- Monograma central -->
+          <text x="150" y="140" text-anchor="middle"
+            font-family="Cormorant Garamond, serif"
+            font-style="italic" font-size="42" font-weight="300"
+            fill="#1A1612" opacity=".65">A</text>
+          <text x="150" y="180" text-anchor="middle"
+            font-family="Cormorant Garamond, serif"
+            font-style="italic" font-size="22" font-weight="300"
+            fill="#C47A65" opacity=".7">&amp;</text>
+          <text x="150" y="218" text-anchor="middle"
+            font-family="Cormorant Garamond, serif"
+            font-style="italic" font-size="38" font-weight="300"
+            fill="#1A1612" opacity=".55">A</text>
+          <!-- Fecha -->
+          <text x="150" y="257" text-anchor="middle"
+            font-family="Jost, sans-serif"
+            font-size="9" letter-spacing="4"
+            fill="#7A6A52" opacity=".7">10 · 10 · 2026</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  CUENTA ATRÁS               ║
+     ╚══════════════════════════════╝ -->
+<section class="section section--dark" id="countdown">
+  <div class="countdown-inner rv">
+    <p class="s-tag" style="color:var(--sage2);justify-content:center;">
+      <span style="width:24px;height:1px;background:var(--sage);display:block;flex-shrink:0"></span>
+      Tiempo hasta el gran día
+    </p>
+    <h2 class="s-title s-title--light" style="text-align:center">
+      Cada momento<br/><em>nos acerca más</em>
+    </h2>
+    <div class="countdown-grid">
+      <div class="cd-unit">
+        <span class="cd-n" id="cdD">000</span>
+        <span class="cd-l">días</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-n" id="cdH">00</span>
+        <span class="cd-l">horas</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-n" id="cdM">00</span>
+        <span class="cd-l">minutos</span>
+      </div>
+      <div class="cd-unit">
+        <span class="cd-n" id="cdS">00</span>
+        <span class="cd-l">segundos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  DETALLES DEL DÍA           ║
+     ╚══════════════════════════════╝ -->
+<section class="section section--alt" id="detalle">
+  <div class="s-inner">
+    <p class="s-tag rv">El gran día</p>
+    <h2 class="s-title rv">10 de octubre<br/>de <em>2026</em></h2>
+    <div class="detalles-grid">
+
+      <article class="detalle-card rv">
+        <div class="detalle-label">Ceremonia</div>
+        <svg class="detalle-icon" viewBox="0 0 36 44" fill="none" stroke="currentColor" stroke-width=".7">
+          <path d="M18 3L30 13V41H6V13Z"/>
+          <path d="M12 41V27Q12 22 18 22Q24 22 24 27V41"/>
+          <circle cx="18" cy="18" r="2.5" fill="currentColor" opacity=".5"/>
+        </svg>
+        <h3 class="detalle-name">El Invernadero del Pazo de Santa Cruz</h3>
+        <div class="detalle-info">
+          <strong>Sábado, 10 de octubre de 2026 · 14:00 h</strong>
+          Rua do Pazo s/n · Bueu · Pontevedra<br/>36939 · Galicia, España
+        </div>
+      </article>
+
+      <article class="detalle-card rv">
+        <div class="detalle-label">Banquete &amp; Celebración</div>
+        <svg class="detalle-icon" viewBox="0 0 36 44" fill="none" stroke="currentColor" stroke-width=".7">
+          <path d="M6 20Q6 11 12 8L24 8Q30 11 30 20V34H6Z"/>
+          <path d="M6 34H30L32 41H4Z"/>
+          <circle cx="18" cy="22" r="5" fill="none"/>
+        </svg>
+        <h3 class="detalle-name">A continuación en el mismo espacio</h3>
+        <div class="detalle-info">
+          <strong>Cóctel · Banquete · Baile</strong>
+          Celebraremos juntos hasta que la noche
+          diga basta. Y seguramente un poco más.
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  HORARIO                    ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="horario">
+  <div class="s-inner">
+    <p class="s-tag rv">Horario del día</p>
+    <h2 class="s-title rv">De principio<br/>a <em>fin</em></h2>
+
+    <div class="horario-wrap" id="horWrap">
+      <div class="horario-rail"></div>
+      <div class="horario-fill" id="horFill"></div>
+
+      <div class="hitem" id="hi0">
+        <span class="h-time">14:00</span>
+        <div class="h-dot"></div>
+        <div class="h-content">
+          <h3>Ceremonia civil</h3>
+          <p>El sí que lleva mucho tiempo esperando ser dicho</p>
+        </div>
+      </div>
+      <div class="hitem" id="hi1">
+        <span class="h-time">15:30</span>
+        <div class="h-dot"></div>
+        <div class="h-content">
+          <h3>Cóctel de bienvenida</h3>
+          <p>Brindis, aperitivos y los primeros abrazos del día</p>
+        </div>
+      </div>
+      <div class="hitem" id="hi2">
+        <span class="h-time">17:00</span>
+        <div class="h-dot"></div>
+        <div class="h-content">
+          <h3>Banquete</h3>
+          <p>A la mesa. Una comida para disfrutar sin prisa</p>
+        </div>
+      </div>
+      <div class="hitem" id="hi3">
+        <span class="h-time">21:00</span>
+        <div class="h-dot"></div>
+        <div class="h-content">
+          <h3>Tarta y baile</h3>
+          <p>La pista es vuestra. Sin excusas posibles</p>
+        </div>
+      </div>
+      <div class="hitem" id="hi4">
+        <span class="h-time">00:00</span>
+        <div class="h-dot"></div>
+        <div class="h-content">
+          <h3>Fiesta y barra libre</h3>
+          <p>La noche apenas empieza para los valientes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  LUGAR                      ║
+     ╚══════════════════════════════╝ -->
+<section class="section section--dark" id="lugar">
+  <div class="s-inner--wide">
+    <div class="lugar-grid">
+      <div class="lugar-info rvl">
+        <p class="s-tag" style="color:var(--sage2)">
+          <span style="width:24px;height:1px;background:var(--sage);display:block"></span>
+          El lugar
+        </p>
+        <h2 class="lugar-nombre">
+          El Invernadero<br/>del Pazo de<br/>Santa Cruz
+        </h2>
+        <p class="lugar-address">
+          <strong>Rua do Pazo s/n · Bueu · Pontevedra<br/>36939 · Galicia, España</strong>
+          Un pazo galego con alma propia, rodeado de naturaleza,
+          con vistas a la ría de Pontevedra.
+          El lugar perfecto para escribir juntos el mejor capítulo.
+        </p>
+        <a href="https://maps.google.com/?q=Pazo+de+Santa+Cruz+de+Bueu+Pontevedra" target="_blank" rel="noopener" class="lugar-btn">
+          <span>Cómo llegar</span>
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="lugar-map rvr">
+        <div class="lugar-map-art">
+          <!-- Pin animado + datos del lugar -->
+          <div class="lugar-pin">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <div class="lugar-map-badge">
+            <p>Pazo de Santa Cruz</p>
+            <span>Bueu · Pontevedra · Galicia</span>
+          </div>
+          <a href="https://maps.google.com/?q=Pazo+de+Santa+Cruz+de+Bueu+Pontevedra" target="_blank" rel="noopener"
+            style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);opacity:.8;margin-top:.5rem;">
+            Ver en Google Maps →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════╗
+     ║  ALOJAMIENTO                ║
+     ╚══════════════════════════════╝ -->
+<section class="section section--dark" id="alojamiento">
+  <div class="s-inner">
+    <p class="s-tag rv" style="color:var(--sage2)">
+      <span style="width:24px;height:1px;background:var(--sage);display:block"></span>
+      Alojamiento cercano
+    </p>
+    <h2 class="s-title s-title--light rv">
+      Dónde descansar<br/><em>en Bueu</em>
+    </h2>
+    <p class="s-lead s-lead--light rv" style="margin-bottom:0">
+      Bueu y sus alrededores tienen varias opciones para
+      que podáis quedaros cerca y sin preocupaciones.
+    </p>
+
+    <div class="hotels-stack">
+      <div class="hotel rv">
+        <span class="hotel-n">01</span>
+        <div class="hotel-vbar"></div>
+        <div class="hotel-info">
+          <div class="hotel-stars">★★★</div>
+          <div class="hotel-name">Hotel por definir</div>
+          <div class="hotel-meta">Bueu · A 5 min del Pazo · Desde 80€/noche</div>
+        </div>
+        <a href="#" class="hotel-cta">Reservar →</a>
+      </div>
+      <div class="hotel rv">
+        <span class="hotel-n">02</span>
+        <div class="hotel-vbar"></div>
+        <div class="hotel-info">
+          <div class="hotel-stars">★★★</div>
+          <div class="hotel-name">Hotel por definir</div>
+          <div class="hotel-meta">Cangas · A 15 min · Desde 70€/noche</div>
+        </div>
+        <a href="#" class="hotel-cta">Reservar →</a>
+      </div>
+      <div class="hotel rv">
+        <span class="hotel-n">03</span>
+        <div class="hotel-vbar"></div>
+        <div class="hotel-info">
+          <div class="hotel-stars">★★★★</div>
+          <div class="hotel-name">Hotel por definir</div>
+          <div class="hotel-meta">Pontevedra · A 30 min · Desde 100€/noche</div>
+        </div>
+        <a href="#" class="hotel-cta">Reservar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  REGALOS                    ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="regalos">
+  <div class="s-inner">
+    <p class="s-tag rv">Regalos</p>
+    <h2 class="s-title rv">
+      El mejor regalo<br/><em>es que estés</em>
+    </h2>
+    <p class="s-lead rv">
+      Vuestra presencia es todo lo que necesitamos. Si aun así queréis
+      hacernos un regalo, aquí os dejamos dos formas de sumarnos a esta
+      nueva etapa juntos.
+    </p>
+    <div class="detalles-grid" style="margin-top:2.5rem">
+      <a href="#" target="_blank" rel="noopener" class="detalle-card rvl" style="cursor:pointer;text-decoration:none;display:block;">
+        <div class="detalle-label">Lista de bodas</div>
+        <svg class="detalle-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width=".7">
+          <rect x="7" y="12" width="22" height="18" rx="1"/>
+          <path d="M5 12H31V17H5Z"/>
+          <path d="M18 12V30 M18 12Q13 9 13 5Q13 2 18 3.5Q23 2 23 5Q23 9 18 12"/>
+        </svg>
+        <h3 class="detalle-name">Lista de bodas</h3>
+        <div class="detalle-info" style="margin-bottom:1rem">Pequeñas cosas que nos harán ilusión para nuestro nuevo hogar.</div>
+        <span style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blush)">Ver lista →</span>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="detalle-card rvr" style="cursor:pointer;text-decoration:none;display:block;">
+        <div class="detalle-label">Luna de miel</div>
+        <svg class="detalle-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width=".7">
+          <path d="M7 18Q7 11 12 7Q18 4 24 7Q30 11 30 18L18 29Z"/>
+          <path d="M12 14Q18 20 24 14" opacity=".5"/>
+        </svg>
+        <h3 class="detalle-name">Luna de miel</h3>
+        <div class="detalle-info" style="margin-bottom:1rem">Ayúdanos a recorrer los lugares con los que llevamos años soñando.</div>
+        <span style="font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blush)">Contribuir →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  RSVP                       ║
+     ╚══════════════════════════════╝ -->
+<section class="section section--alt" id="rsvp">
+  <div class="s-inner--wide">
+    <div class="rsvp-grid">
+
+      <!-- Lado decorativo -->
+      <div class="rsvp-deco rvl">
+        <div>
+          <p class="s-tag">Confirmación de asistencia</p>
+          <h2 class="s-title">Dinos que<br/><em>vendrás</em></h2>
+        </div>
+        <div>
+          <p class="rsvp-quote">
+            "Las personas que se quieren de verdad<br/>
+            no necesitan palabras para <em>reconocerse</em>"
+          </p>
+          <p class="rsvp-cite">— Anónimo</p>
+        </div>
+        <p class="rsvp-deadline">
+          Confirma antes del <strong>1 de agosto de 2026</strong>
+        </p>
+        <!-- Ilustración ornamental -->
+        <svg viewBox="0 0 260 140" fill="none" style="width:100%;max-width:280px;opacity:.55">
+          <path d="M20 70 Q80 20 130 70 Q180 120 240 70" stroke="#6B8C70" stroke-width=".8" fill="none"/>
+          <path d="M20 70 Q80 120 130 70 Q180 20 240 70" stroke="#C47A65" stroke-width=".8" fill="none"/>
+          <circle cx="130" cy="70" r="8" stroke="#B8942A" stroke-width=".6" fill="none"/>
+          <circle cx="130" cy="70" r="3" fill="#B8942A" opacity=".6"/>
+          <circle cx="20" cy="70" r="3" fill="#6B8C70" opacity=".5"/>
+          <circle cx="240" cy="70" r="3" fill="#C47A65" opacity=".5"/>
+        </svg>
+      </div>
+
+      <!-- Formulario -->
+      <div class="rvr">
+        <div class="rsvp-card" id="rsvpCard">
+
+          <!-- PASO 1 -->
+          <div id="s1" class="step-in">
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--ink);text-align:center;margin-bottom:1.8rem;">
+              ¿Podrás acompañarnos?
+            </p>
+            <div class="choice-row">
+              <button class="choice-btn si" id="bSi">
+                <div class="choice-mark">✓</div>
+                <span class="choice-lbl">Sí, allí estaré</span>
+                <span class="choice-sub">Confirmar</span>
+              </button>
+              <button class="choice-btn no" id="bNo">
+                <div class="choice-mark">×</div>
+                <span class="choice-lbl">No podré ir</span>
+                <span class="choice-sub">Declinar</span>
+              </button>
+            </div>
+
+            <!-- Si tienes el enlace de Forms, descomenta esto y borra los botones de arriba: -->
+            <!--
+            <p style="font-size:.9rem;color:var(--ink3);text-align:center;margin-bottom:1.5rem;line-height:1.7;">
+              Rellena el formulario de confirmación para que podamos organizarlo todo con cariño.
+            </p>
+            <a href="TU_ENLACE_GOOGLE_FORMS" target="_blank" rel="noopener" class="rsvp-link-btn">
+              <span>Confirmar asistencia</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M2 7h10M7 2l5 5-5 5"/>
+              </svg>
+            </a>
+            -->
+          </div>
+
+          <!-- PASO 2 -->
+          <div id="s2" hidden>
+            <div class="fld">
+              <label>Nombre completo</label>
+              <input type="text" id="rN" placeholder="Tu nombre"/>
+            </div>
+            <div class="fld">
+              <label>Email</label>
+              <input type="email" id="rE" placeholder="tu@email.com"/>
+            </div>
+            <div class="fld" id="fG">
+              <label>Número de acompañantes</label>
+              <div class="cnt">
+                <button class="cnt-btn" id="gM" type="button">−</button>
+                <span class="cnt-val" id="gV">0</span>
+                <button class="cnt-btn" id="gP" type="button">+</button>
+              </div>
+            </div>
+            <div class="fld" id="fDiet">
+              <label>Alergias o restricciones alimentarias</label>
+              <input type="text" id="rDi" placeholder="Ninguna, celiaquía, vegetariano..."/>
+            </div>
+            <div class="fld">
+              <label>Un mensaje para nosotros (opcional)</label>
+              <textarea id="rMsg" rows="3" placeholder="Nos encantará leerlo..."></textarea>
+            </div>
+            <button type="button" class="send-btn" id="bSend">
+              <span>Confirmar asistencia</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M2 7h10M7 2l5 5-5 5"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- PASO 3: Éxito -->
+          <div id="s3" hidden>
+            <div class="rsvp-ok">
+              <div class="ok-seal">
+                <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width=".8">
+                  <circle cx="35" cy="35" r="32"/>
+                  <circle cx="35" cy="35" r="24" stroke-dasharray="2 3"/>
+                  <path d="M23 35l8 8 16-16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="ok-title">Respuesta recibida</h3>
+              <p class="ok-msg" id="okTxt">Gracias por confirmar. Estamos deseando celebrarlo contigo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  FAQ                        ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="faq">
+  <div class="s-inner">
+    <p class="s-tag rv">Preguntas frecuentes</p>
+    <h2 class="s-title rv">
+      Todo lo que<br/><em>necesitas saber</em>
+    </h2>
+
+    <div class="faq-list rv">
+      <details class="fq">
+        <summary>
+          ¿Cómo llego al Pazo de Santa Cruz de Bueu?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          El Pazo está en Rua do Pazo s/n, Bueu (Pontevedra), a unos 30 km de Pontevedra capital y a 25 km de Vigo.
+          Hay acceso en coche por la carretera PO-551 desde Cangas. Si vienes en transporte público, hay autobuses
+          desde Pontevedra y Vigo hasta Bueu. Próximamente compartiremos más detalles y posible servicio de autobús.
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          ¿Hay aparcamiento en el lugar?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Sí, el Pazo dispone de zona de aparcamiento. También hay espacios públicos en los alrededores de Bueu.
+          Te recomendamos llegar con algo de margen para aparcar con comodidad.
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          ¿Podemos llevar niños?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Por supuesto, los niños son bienvenidos. Habrá menú infantil y el espacio del Pazo es amplio y agradable
+          para que los más pequeños puedan moverse con libertad.
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          ¿Habrá transporte organizado?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Estamos valorando organizar un servicio de autobús desde Pontevedra y/o Vigo. Os informaremos con tiempo
+          suficiente en cuanto tengamos los detalles cerrados.
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          ¿Hasta cuándo puedo confirmar asistencia?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Te pedimos que confirmes antes del 1 de agosto de 2026. Esto nos ayudará a organizar el banquete y
+          todos los detalles del día con la antelación necesaria.
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          Si no puedo ir, ¿cómo lo comunico?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Lo entendemos perfectamente. Te pedimos igualmente que nos lo confirmes a través del formulario de asistencia
+          para poder cerrar bien los números. ¡Te echaremos de menos!
+        </div>
+      </details>
+      <details class="fq">
+        <summary>
+          ¿Qué hago si tengo una restricción alimentaria?
+          <span class="fq-plus"></span>
+        </summary>
+        <div class="fq-body">
+          Indícanoslo en el formulario de confirmación de asistencia. El equipo del catering puede adaptarse a
+          celiaquías, alergias, dietas vegetarianas o veganas. Cualquier duda, escríbenos directamente.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ╔══════════════════════════════╗
+     ║  FOOTER                     ║
+     ╚══════════════════════════════╝ -->
+<footer class="footer">
+  <canvas id="footCanvas"></canvas>
+  <div class="footer-inner">
+    <h2 class="footer-names">
+      Adrián <span>&amp;</span><br/>Antonella
+    </h2>
+    <p class="footer-date">10 · 10 · 2026 · Bueu · Galicia</p>
+    <p class="footer-lema">
+      Nuestras almas se reconocieron.<br/>Hoy celebramos su unión.
+    </p>
+    <a class="wa"
+      href="https://wa.me/?text=Adrián%20y%20Antonella%20se%20casan%20el%2010%20de%20octubre%20de%202026%20en%20el%20Pazo%20de%20Santa%20Cruz%2C%20Bueu.%20Aquí%20tienes%20su%20invitación%3A%20[URL]"
+      target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.526 5.847L.057 23.493a.5.5 0 00.614.635l5.807-1.525A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.875 9.875 0 01-5.033-1.375l-.361-.214-3.741.981.999-3.648-.235-.374A9.856 9.856 0 012.118 12C2.118 6.538 6.538 2.118 12 2.118S21.882 6.538 21.882 12 17.462 21.882 12 21.882z"/>
+      </svg>
+      Compartir invitación
+    </a>
+    <p class="footer-tiny">Hecho con amor · Adrián &amp; Antonella · 2026</p>
+  </div>
+</footer>
+
+<script>
+/* ──────────────────────────────────
+   CUBIERTA — apertura de invitación
+────────────────────────────────── */
+(function(){
+  const cub = document.getElementById('cubierta');
+  const sello = document.getElementById('cub-sello');
+  if (!cub || !sello) return;
+  document.body.classList.add('cub-locked');
+
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+    cub.style.display = 'none';
+    document.body.classList.remove('cub-locked');
+    return;
+  }
+
+  setTimeout(() => sello.classList.add('visible'), 850);
+
+  let opened = false;
+  function abrir() {
+    if (opened) return;
+    opened = true;
+    cub.classList.add('open');
+    setTimeout(() => {
+      cub.style.display = 'none';
+      document.body.classList.remove('cub-locked');
+    }, 1250);
+  }
+
+  sello.addEventListener('click', abrir);
+  document.addEventListener('keydown', e => e.key === 'Escape' && abrir());
+})();
+
+/* ──────────────────────────────────
+   NAV
+────────────────────────────────── */
+const nav = document.getElementById('nav');
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mobOverlay');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', scrollY > 60);
+  const tot = document.documentElement.scrollHeight - innerHeight;
+  document.getElementById('barFill').style.width = tot > 0 ? (scrollY / tot * 100) + '%' : '0%';
+}, {passive:true});
+
+burger.addEventListener('click', () => {
+  const open = burger.classList.toggle('open');
+  mob.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.classList.remove('open');
+  mob.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+/* ──────────────────────────────────
+   SCROLL SUAVE
+────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 72, behavior: 'smooth' });
+  });
+});
+
+/* ──────────────────────────────────
+   REVEAL
+────────────────────────────────── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.rv,.rvl,.rvr').forEach((el, i) => {
+  el.style.transitionDelay = (i % 6 * .07) + 's';
+  obs.observe(el);
+});
+
+/* ──────────────────────────────────
+   CUENTA ATRÁS  — 10·10·2026 14:00
+────────────────────────────────── */
+const BODA = new Date('2026-10-10T14:00:00');
+const p = (n, z = 2) => String(n).padStart(z, '0');
+function tick() {
+  const d = BODA - new Date();
+  if (d <= 0) { ['cdD','cdH','cdM','cdS'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+  document.getElementById('cdD').textContent = p(Math.floor(d / 86400000), 3);
+  document.getElementById('cdH').textContent = p(Math.floor(d % 86400000 / 3600000));
+  document.getElementById('cdM').textContent = p(Math.floor(d % 3600000 / 60000));
+  document.getElementById('cdS').textContent = p(Math.floor(d % 60000 / 1000));
+}
+tick(); setInterval(tick, 1000);
+
+/* ──────────────────────────────────
+   HORARIO: timeline iluminado
+────────────────────────────────── */
+const hItems = document.querySelectorAll('.hitem');
+function updateHorario() {
+  if (!document.getElementById('horWrap')) return;
+  const wrapRect = document.getElementById('horWrap').getBoundingClientRect();
+  const mid = innerHeight * .55;
+  let litCount = 0;
+  hItems.forEach((item, i) => {
+    const r = item.getBoundingClientRect();
+    if (r.top < mid) { item.classList.add('lit'); litCount = i + 1; }
+  });
+  const total = hItems.length;
+  const pct = total > 0 ? (litCount / total) * 100 : 0;
+  document.getElementById('horFill').style.height = pct + '%';
+}
+window.addEventListener('scroll', updateHorario, { passive: true });
+updateHorario();
+
+/* ──────────────────────────────────
+   RSVP multi-paso
+────────────────────────────────── */
+let asistencia = null, guests = 0;
+
+function showStep(n) {
+  [1, 2, 3].forEach(i => {
+    const el = document.getElementById('s' + i);
+    if (!el) return;
+    el.hidden = i !== n;
+    if (i === n) { el.classList.remove('step-in'); void el.offsetWidth; el.classList.add('step-in'); }
+  });
+}
+
+document.getElementById('bSi')?.addEventListener('click', () => {
+  asistencia = 'si';
+  document.getElementById('fG').hidden = false;
+  document.getElementById('fDiet').hidden = false;
+  showStep(2);
+});
+document.getElementById('bNo')?.addEventListener('click', () => {
+  asistencia = 'no';
+  document.getElementById('fG').hidden = true;
+  document.getElementById('fDiet').hidden = true;
+  showStep(2);
+});
+
+const gV = document.getElementById('gV');
+document.getElementById('gM')?.addEventListener('click', () => { if (guests > 0) gV.textContent = --guests; });
+document.getElementById('gP')?.addEventListener('click', () => { if (guests < 8) gV.textContent = ++guests; });
+
+document.getElementById('bSend')?.addEventListener('click', () => {
+  const nm = document.getElementById('rN');
+  const em = document.getElementById('rE');
+  [nm, em].forEach(x => x.classList.remove('err'));
+  let ok = true;
+  if (!nm.value.trim()) { nm.classList.add('err'); ok = false; }
+  if (!em.value.trim() || !em.value.includes('@')) { em.classList.add('err'); ok = false; }
+  if (!ok) {
+    document.getElementById('rsvpCard').animate(
+      [{ transform: 'translateX(0)' }, { transform: 'translateX(-7px)' }, { transform: 'translateX(7px)' }, { transform: 'translateX(0)' }],
+      { duration: 360, easing: 'ease-out' }
+    );
+    return;
+  }
+  // ⚙️ Cuando tengas el enlace de Google Forms:
+  // window.open('TU_ENLACE_GOOGLE_FORMS', '_blank');
+  // ⚙️ O conecta con Formspree:
+  // fetch('https://formspree.io/f/TU_ID',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({asistencia,nombre:nm.value,email:em.value,guests})})
+  console.log('RSVP:', { asistencia, nombre: nm.value.trim(), email: em.value.trim(), guests });
+  document.getElementById('okTxt').textContent = asistencia === 'no'
+    ? 'Sentimos que no puedas venir. Gracias por avisarnos con tiempo.'
+    : 'Gracias por confirmar. No podemos esperar a celebrarlo contigo.';
+  showStep(3);
+});
+
+/* ──────────────────────────────────
+   HERO CANVAS: pétalos cayendo
+────────────────────────────────── */
+(function() {
+  const c = document.getElementById('heroCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  let W, H, petals = [];
+
+  const COLORS = ['#E5A898','#F5D5CB','#C47A65','#98B89C','#C8DEC8','#D4B050','#F0D488'];
+
+  function newPetal(initialY) {
+    const size = Math.random() * 9 + 4;
+    return {
+      x: Math.random() * W,
+      y: initialY !== undefined ? initialY : -size * 2,
+      size,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      alpha: Math.random() * .32 + .1,
+      speed: Math.random() * 1.1 + .45,
+      swayAmp: Math.random() * 1.6 + .5,
+      swaySpeed: Math.random() * .018 + .007,
+      swayOff: Math.random() * Math.PI * 2,
+      rot: Math.random() * Math.PI * 2,
+      rotSpeed: (Math.random() - .5) * .025,
+      t: Math.random() * 100,
+    };
+  }
+
+  function init() {
+    W = c.width = c.offsetWidth || innerWidth;
+    H = c.height = c.offsetHeight || innerHeight;
+    petals = [];
+    const n = Math.min(90, Math.floor(W * H / 7000));
+    for (let i = 0; i < n; i++) petals.push(newPetal(Math.random() * H));
+  }
+  init();
+  window.addEventListener('resize', () => { c.width = 0; init(); });
+
+  function drawPetalShape(size) {
+    ctx.beginPath();
+    ctx.moveTo(0, -size);
+    ctx.bezierCurveTo( size * .8, -size * .5,  size * .8,  size * .5, 0,  size);
+    ctx.bezierCurveTo(-size * .8,  size * .5, -size * .8, -size * .5, 0, -size);
+    ctx.closePath();
+  }
+
+  let raf;
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of petals) {
+      p.t += p.swaySpeed;
+      p.y += p.speed;
+      p.x += Math.sin(p.t + p.swayOff) * p.swayAmp;
+      p.rot += p.rotSpeed;
+      if (p.y > H + p.size * 2) Object.assign(p, newPetal());
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.color;
+      drawPetalShape(p.size);
+      ctx.fill();
+      ctx.restore();
+    }
+    raf = requestAnimationFrame(draw);
+  }
+  draw();
+
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { if (!raf) draw(); }
+    else { cancelAnimationFrame(raf); raf = null; }
+  }).observe(c.parentElement);
+})();
+
+/* ──────────────────────────────────
+   FOOTER CANVAS: anillos concéntricos
+────────────────────────────────── */
+(function() {
+  const c = document.getElementById('footCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  let W, H, ang = 0;
+  function init() {
+    W = c.width = c.offsetWidth || 800;
+    H = c.height = c.offsetHeight || 300;
+  }
+  init();
+  window.addEventListener('resize', init);
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.save(); ctx.translate(W / 2, H / 2); ctx.rotate(ang);
+    const r = Math.min(W, H);
+    for (let i = 1; i <= 7; i++) {
+      ctx.beginPath();
+      ctx.arc(0, 0, i * r / 14, 0, Math.PI * 2);
+      ctx.strokeStyle = i % 2 === 0 ? '#C47A65' : '#6B8C70';
+      ctx.globalAlpha = .08 - i * .006;
+      ctx.lineWidth = .7;
+      ctx.stroke();
+    }
+    ctx.restore();
+    ang += .0006;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
