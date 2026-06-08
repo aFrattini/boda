@@ -740,6 +740,17 @@ body.cub-locked{overflow:hidden}
   opacity:0;
   transition:transform .5s,opacity .3s;
 }
+#cub-sello svg{
+  animation:cubPulse 2.6s ease-in-out 2s infinite;
+}
+#cub-sello:hover svg,
+#cub-sello:active svg{
+  animation-play-state:paused;
+}
+@keyframes cubPulse{
+  0%,100%{transform:scale(1) translateY(0)}
+  50%    {transform:scale(1.12) translateY(-5px)}
+}
 
 /* ══════════════════════════════════════════
    ALOJAMIENTO
@@ -1826,7 +1837,7 @@ details.fq[open] .fq-plus::after{opacity:0;transform:translate(-50%,-50%)rotate(
     }, 1250);
   }
 
-  sello.addEventListener('click', abrir);
+  cub.addEventListener('click', abrir);
   document.addEventListener('keydown', e => e.key === 'Escape' && abrir());
 })();
 
